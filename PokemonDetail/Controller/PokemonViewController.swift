@@ -50,7 +50,7 @@ extension PokemonViewController : UITableViewDelegate, UITableViewDataSource {
         
         // Set background color for selected cell
         let selectedRowBackground = UIView()
-        selectedRowBackground.backgroundColor = UIColor.blue
+        selectedRowBackground.backgroundColor = UIColor.backgroundSelect
         cell.selectedBackgroundView = selectedRowBackground
         
         return cell
