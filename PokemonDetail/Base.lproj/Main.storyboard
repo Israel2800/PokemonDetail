@@ -95,8 +95,9 @@
                         <rect key="frame" x="0.0" y="0.0" width="393" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nvh-Mk-MzC">
+                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="nvh-Mk-MzC">
                                 <rect key="frame" x="-13" y="0.0" width="410" height="713"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Habilidades:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UFZ-KY-IZ1">
                                         <rect key="frame" x="51" y="568" width="108" height="24"/>
@@ -120,11 +121,11 @@
                                         <fontDescription key="fontDescription" style="UICTFontTextStyleHeadline"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                     </textView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fc6-YZ-Qrq">
-                                        <rect key="frame" x="166" y="302" width="87" height="41"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Name" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fc6-YZ-Qrq">
+                                        <rect key="frame" x="29" y="302" width="361" height="41"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" style="UICTFontTextStyleTitle0"/>
-                                        <color key="textColor" name="InverseColor"/>
+                                        <color key="textColor" name="NamePokemon"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Tipo:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="lvZ-GJ-iCH">
@@ -138,7 +139,7 @@
                                         <rect key="frame" x="182" y="481" width="193" height="39"/>
                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <nil key="textColor"/>
+                                        <color key="textColor" name="TypeColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Habilidad" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vGN-ds-8dR">
@@ -188,14 +189,9 @@
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="Mhk-My-Hci"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                        <constraints>
-                            <constraint firstAttribute="trailingMargin" secondItem="nvh-Mk-MzC" secondAttribute="trailing" constant="-20" id="Hj0-5u-evK"/>
-                            <constraint firstItem="nvh-Mk-MzC" firstAttribute="leading" secondItem="noK-x7-iPi" secondAttribute="leadingMargin" constant="-29" id="Whg-Wt-Qp5"/>
-                            <constraint firstItem="nvh-Mk-MzC" firstAttribute="top" secondItem="Mhk-My-Hci" secondAttribute="top" id="qDf-YG-ffj"/>
-                            <constraint firstItem="Mhk-My-Hci" firstAttribute="bottom" secondItem="nvh-Mk-MzC" secondAttribute="bottom" constant="129" id="v5h-kh-wlq"/>
-                        </constraints>
                     </view>
                     <connections>
+                        <outlet property="namepokemon" destination="Fc6-YZ-Qrq" id="uWN-b8-xc5"/>
                         <outlet property="pokeability" destination="1Yi-LQ-yMg" id="PBs-Dv-3wG"/>
                         <outlet property="pokedescrip" destination="cUo-Gr-Xbd" id="TdT-df-tIw"/>
                         <outlet property="pokeimg" destination="FFg-sk-l9N" id="dOv-fQ-9cW"/>
@@ -214,16 +210,19 @@
     <resources>
         <image name="0" width="260" height="240"/>
         <namedColor name="HabilityColors">
-            <color red="1" green="0.56824963257942596" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="1" green="0.56800001859664917" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
-        <namedColor name="InverseColor">
-            <color red="0.23221981502869282" green="0.30096926199367563" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        <namedColor name="NamePokemon">
+            <color red="0.83986388530927836" green="0.0" blue="0.071783040883646398" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <namedColor name="PokemonName">
             <color red="0.0020000000949949026" green="0.24300000071525574" blue="0.90299999713897705" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
+        <namedColor name="TypeColor">
+            <color red="0.0" green="1" blue="0.91500002145767212" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
         <namedColor name="TypeHability">
-            <color red="0.13940922747531947" green="0.85031411082474229" blue="0.054380064505142461" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <color red="0.13899999856948853" green="0.85000002384185791" blue="0.054000001400709152" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>

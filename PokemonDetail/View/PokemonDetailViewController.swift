@@ -30,6 +30,7 @@ class PokemonDetailViewController: UIViewController {
     
     @IBOutlet var pokemov4: UILabel!
     
+    @IBOutlet weak var namepokemon: UILabel!
     
     
     override func viewDidLoad() {
@@ -53,6 +54,7 @@ class PokemonDetailViewController: UIViewController {
         pokemov3.text = moves![2]
         pokemov4.text = moves![3]
         
+        namepokemon.text = receivedPokemon?.name ?? "Sin nombre"
     }
     
     @IBAction func closeModal(_ sender: UIButton) {
