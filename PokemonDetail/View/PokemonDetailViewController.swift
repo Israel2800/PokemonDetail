@@ -39,12 +39,12 @@ class PokemonDetailViewController: UIViewController {
         pokedescrip.text = receivedPokemon?.description ?? "no hay descripcion"
         
         let types = receivedPokemon?.types.joined(separator: " y ")
-        poketipo.text = "Los tipos son: " + (types ?? "no hay tipos")
+        poketipo.text = (types ?? "no hay tipos")
         
         
         
         
-        pokeability.text = "Su habilidad es:  \(receivedPokemon?.ability ?? "ninguna") "
+        pokeability.text = "\(receivedPokemon?.ability ?? "ninguna") "
         
         
         let moves = receivedPokemon?.moves
