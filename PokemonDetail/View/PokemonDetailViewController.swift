@@ -3,6 +3,7 @@
 //  PokemonDetail
 //
 //  Created by Israel Aguilar on 8/26/24.
+// Modified by Juan Jose
 //
 
 import UIKit
@@ -11,22 +12,51 @@ class PokemonDetailViewController: UIViewController {
     
     var receivedPokemon : Pokemon?
 
+    
+    
+    @IBOutlet var pokeimg: UIImageView!
+    
+    @IBOutlet var pokedescrip: UITextView!
+    
+    @IBOutlet var poketipo: UILabel!
+    
+    @IBOutlet var pokeability: UILabel!
+    
+    @IBOutlet var pokemov1: UILabel!
+    
+    @IBOutlet var pokemov2: UILabel!
+    
+    @IBOutlet var pokemov3: UILabel!
+    
+    @IBOutlet var pokemov4: UILabel!
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        
+        pokeimg.image = UIImage(named: receivedPokemon?.image ?? "1024")
+        pokedescrip.text = receivedPokemon?.description ?? "no hay descripcion"
+        
+        let types = receivedPokemon?.types.joined(separator: " y ")
+        poketipo.text = "Los tipos son: " + (types ?? "no hay tipos")
+        
+        
+        
+        
+        pokeability.text = "Su habilidad es:  \(receivedPokemon?.ability ?? "ninguna") "
+        
+        
+        let moves = receivedPokemon?.moves
+        pokemov1.text = moves![0]
+        pokemov2.text = moves![1]
+        pokemov3.text = moves![2]
+        pokemov4.text = moves![3]
+        
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
-
+    @IBAction func closeModal(_ sender: UIButton) {
+            self.dismiss(animated: true, completion: nil)
+        }
 }
 

@@ -112,4 +112,5 @@ extension PokemonViewController : UITableViewDelegate, UITableViewDataSource {
         self.performSegue(withIdentifier: "detailSegue", sender: self)
     }
     
+    
 }
