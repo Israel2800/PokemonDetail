@@ -36,6 +36,8 @@ class PokemonDetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.view.backgroundColor = UIColor.systemBackground
+        
         pokeimg.image = UIImage(named: receivedPokemon?.image ?? "1024")
         pokedescrip.text = receivedPokemon?.description ?? "no hay descripcion"
         

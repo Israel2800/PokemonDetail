@@ -17,6 +17,8 @@ class PokemonViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.view.backgroundColor = UIColor.backgroundSelect
 
         // Do any additional setup after loading the view.
         
